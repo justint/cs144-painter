@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F647A6A1DDE84CE000B7BF9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F647A691DDE84CE000B7BF9 /* main.cpp */; };
-		2F647A711DDE857E000B7BF9 /* mouse_keyboard_click_position.c in Sources */ = {isa = PBXBuildFile; fileRef = 2F647A701DDE857E000B7BF9 /* mouse_keyboard_click_position.c */; };
 		2F647A731DDE859F000B7BF9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F647A721DDE859F000B7BF9 /* OpenGL.framework */; };
 		2F647A751DDE85B2000B7BF9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F647A741DDE85B2000B7BF9 /* GLUT.framework */; };
+		2F647A781DDE88DB000B7BF9 /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F647A761DDE88DB000B7BF9 /* Canvas.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,10 +26,11 @@
 
 /* Begin PBXFileReference section */
 		2F647A661DDE84CE000B7BF9 /* cs144-painter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cs144-painter"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F647A691DDE84CE000B7BF9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2F647A701DDE857E000B7BF9 /* mouse_keyboard_click_position.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mouse_keyboard_click_position.c; sourceTree = "<group>"; };
 		2F647A721DDE859F000B7BF9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		2F647A741DDE85B2000B7BF9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		2F647A761DDE88DB000B7BF9 /* Canvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Canvas.cpp; sourceTree = "<group>"; };
+		2F647A771DDE88DB000B7BF9 /* Canvas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Canvas.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,8 @@
 		2F647A681DDE84CE000B7BF9 /* cs144-painter */ = {
 			isa = PBXGroup;
 			children = (
-				2F647A691DDE84CE000B7BF9 /* main.cpp */,
+				2F647A761DDE88DB000B7BF9 /* Canvas.cpp */,
+				2F647A771DDE88DB000B7BF9 /* Canvas.hpp */,
 			);
 			path = "cs144-painter";
 			sourceTree = "<group>";
@@ -128,8 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F647A711DDE857E000B7BF9 /* mouse_keyboard_click_position.c in Sources */,
-				2F647A6A1DDE84CE000B7BF9 /* main.cpp in Sources */,
+				2F647A781DDE88DB000B7BF9 /* Canvas.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
