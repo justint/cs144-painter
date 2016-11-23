@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F21CFAF1DE52254006E7EC8 /* Drawable.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F21CFAE1DE52254006E7EC8 /* Drawable.hpp */; };
 		2F647A731DDE859F000B7BF9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F647A721DDE859F000B7BF9 /* OpenGL.framework */; };
 		2F647A751DDE85B2000B7BF9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F647A741DDE85B2000B7BF9 /* GLUT.framework */; };
 		2F647A781DDE88DB000B7BF9 /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F647A761DDE88DB000B7BF9 /* Canvas.cpp */; };
@@ -25,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F21CFAE1DE52254006E7EC8 /* Drawable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Drawable.hpp; sourceTree = "<group>"; };
 		2F647A661DDE84CE000B7BF9 /* cs144-painter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cs144-painter"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F647A701DDE857E000B7BF9 /* mouse_keyboard_click_position.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mouse_keyboard_click_position.c; sourceTree = "<group>"; };
 		2F647A721DDE859F000B7BF9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -70,6 +72,7 @@
 			children = (
 				2F647A761DDE88DB000B7BF9 /* Canvas.cpp */,
 				2F647A771DDE88DB000B7BF9 /* Canvas.hpp */,
+				2F21CFAE1DE52254006E7EC8 /* Drawable.hpp */,
 			);
 			path = "cs144-painter";
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F647A781DDE88DB000B7BF9 /* Canvas.cpp in Sources */,
+				2F21CFAF1DE52254006E7EC8 /* Drawable.hpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

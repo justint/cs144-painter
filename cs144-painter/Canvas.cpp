@@ -6,7 +6,9 @@
 //
 //
 
+#include <iostream>
 #include "Canvas.hpp"
+
 
 int main(int argc, char * argv[])
 {

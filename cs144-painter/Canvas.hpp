@@ -64,10 +64,12 @@ Canvas::Canvas(int x_resolution, int y_resolution)
 
 void Canvas::display()
 {
-    glClearColor (0.0, 0.0, 0.0, 1.0);
+    glClearColor (1.0, 1.0, 1.0, 1.0);
     glClear (GL_COLOR_BUFFER_BIT);
     glLoadIdentity ();
-
+    /*
+     Insert draw methods for drawable shapes
+     */
     glFlush ();
 }
 
