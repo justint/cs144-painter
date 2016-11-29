@@ -52,8 +52,8 @@ enum menuOptions {recFillRed, recFillGreen, recFillBlue, recFillYellow, recFillP
  Handles the main OpenGL window initialization and mouse/keyboard inputs,
  ie. the main loop of the program.
  
- Does not handle the rendering for drawables (each drawable renders itself).
- See Canvas::display() for how each drawable is rendered.
+ Does not handle the rendering for drawables (each drawable renders itself by being called
+ in the menu function).
  */
 class Canvas {
 public:
@@ -70,7 +70,8 @@ private:
     
     std::vector< Drawable<int> > drawables;
     
-    void createContextMenu();
+    void create_context_menu();
+    static void menu(int value);
     
     static void display();
     static void reshape(int w, int h);
@@ -98,9 +99,6 @@ void Canvas::display()
     glClearColor (1.0, 1.0, 1.0, 1.0);
     glClear (GL_COLOR_BUFFER_BIT);
     glLoadIdentity ();
-    /*
-     Insert draw calls for each element in drawables vector
-     */
     glFlush ();
 }
 
@@ -178,7 +176,7 @@ void Canvas::init(int argc, char **argv)
     glutInitWindowSize (this->x_resolution, this->y_resolution);
     glutInitWindowPosition (0,0);
     glutCreateWindow (WINDOW_TITLE);
-    createContextMenu();
+    create_context_menu();
     glutDisplayFunc (display);
     glutReshapeFunc (reshape);
     glutMouseFunc (in_mouse);
@@ -194,7 +192,7 @@ void Canvas::init(int argc, char **argv)
  Each time the context menu is clicked it shows the printed path to
  compare that it matches the expected output.
  */
-void menu (int value)
+void Canvas::menu (int value)
 {
     switch (value)
     {
@@ -402,7 +400,7 @@ void menu (int value)
  parent because the parent call includes the submenu.  In this way the
  submenu exists for the parent call to invoke and no error is created.
  */
-void Canvas::createContextMenu()
+void Canvas::create_context_menu()
 {
     int ellFillMenu, ellOutlineMenu, rectangleFillMenu, rectangleOutlineMenu,
     mainMenu, bezierSubMenu, ellipseSubMenu, lineSubMenu, rectangleSubMenu;
