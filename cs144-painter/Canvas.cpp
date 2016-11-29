@@ -6,9 +6,10 @@
 //
 //
 
-#include <iostream>
 #include "Canvas.hpp"
 
+// Initializes the context for the canvas
+Context Canvas::c;
 
 int main(int argc, char * argv[])
 {
