@@ -12,10 +12,42 @@
 #include <stdio.h>
 #include <vector>
 #include <exception>
+#include <tuple>
 
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 #include <GLUT/glut.h>
+
+//color options: red green blue yellow purple orange white black
+enum menuOptions {recFillRed, recFillGreen, recFillBlue, recFillYellow, recFillPurple,
+    recFillOrange, recFillWhite, recFillBlack, recOutlineRed, recOutlineGreen,
+    recOutlineBlue, recOutlineYellow, recOutlinePurple, recOutlineOrange,
+    recOutlineWhite, recOutlineBlack, ellFillRed, ellFillGreen, ellFillBlue,
+    ellFillYellow, ellFillPurple, ellFillOrange, ellFillWhite, ellFillBlack,
+    ellOutRed, ellOutGreen, ellOutBlue, ellOutYellow, ellOutPurple, ellOutOrange,
+    ellOutWhite, ellOutBlack, lineRed, lineGreen, lineBlue, lineYellow, linePurple,
+    lineOrange, lineWhite, lineBlack, bezRed, bezGreen, bezBlue, bezYellow, bezPurple,
+    bezOrange, bezWhite, bezBlack};
+
+const char* menuOptionsToString(menuOptions m)
+{
+    switch(m)
+    {
+        case recFillRed:
+            return "recFillRed";
+        default:
+            break;
+    }
+    return NULL;
+}
+
+enum Color {
+    red, green, blue, yellow, purple, orange, white, black
+};
+
+struct rgb {
+    Color r, g, b;
+};
 
 /*
  Provides important resolution, mouse info to each drawable so
@@ -35,7 +67,11 @@ struct Context {
     int x_res;
     int y_res;
     
-    Context() : left_mouse_button_x(120), left_mouse_button_y(240), middle_mouse_button_x(220), middle_mouse_button_y(240), right_mouse_button_x(320), right_mouse_button_y(240), last_mouse_button_pressed(0)
+    menuOptions e;
+    
+    bool currently_drawing;
+    
+    Context() : left_mouse_button_x(120), left_mouse_button_y(240), middle_mouse_button_x(220), middle_mouse_button_y(240), right_mouse_button_x(320), right_mouse_button_y(240), last_mouse_button_pressed(0), currently_drawing(false)
     { }
 };
 
@@ -49,6 +85,8 @@ public:
     Drawable();
     ~Drawable();
     void virtual draw(const Context& c);
+    
+    bool filled;
     
     static bool check_type(std::vector<T> verts);
 };
@@ -69,6 +107,12 @@ bool Drawable<T>::check_type(std::vector<T> verts)
             throw typeid(v).name();
     }
     return true;
+}
+
+template<typename T>
+void Drawable<T>::draw(const Context &c)
+{
+
 }
 
 #endif /* Drawable_hpp */

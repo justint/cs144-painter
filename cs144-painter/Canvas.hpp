@@ -13,9 +13,12 @@
 #define Canvas_hpp
 
 #include <stdio.h>
+#include <iostream>
 #include <vector>
+#include <tuple>
 
 #include "Drawable.hpp"
+#include "Rectangle.hpp"
 
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
@@ -36,18 +39,6 @@
 #define RIGHT_MOUSE_BUTTON 3
 
 
-//color options: red green blue yellow purple orange white black
-enum menuOptions {recFillRed, recFillGreen, recFillBlue, recFillYellow, recFillPurple,
-    recFillOrange, recFillWhite, recFillBlack, recOutlineRed, recOutlineGreen,
-    recOutlineBlue, recOutlineYellow, recOutlinePurple, recOutlineOrange,
-    recOutlineWhite, recOutlineBlack, ellFillRed, ellFillGreen, ellFillBlue,
-    ellFillYellow, ellFillPurple, ellFillOrange, ellFillWhite, ellFillBlack,
-    ellOutRed, ellOutGreen, ellOutBlue, ellOutYellow, ellOutPurple, ellOutOrange,
-    ellOutWhite, ellOutBlack, lineRed, lineGreen, lineBlue, lineYellow, linePurple,
-    lineOrange, lineWhite, lineBlack, bezRed, bezGreen, bezBlue, bezYellow, bezPurple,
-    bezOrange, bezWhite, bezBlack};
-
-
 /*
  Handles the main OpenGL window initialization and mouse/keyboard inputs,
  ie. the main loop of the program.
@@ -59,7 +50,7 @@ class Canvas {
 public:
     Canvas();
     Canvas(int x_resolution, int y_resolution);
-    ~Canvas();
+    ~Canvas() {};
     
     static Context c;
     
@@ -69,6 +60,8 @@ private:
     int y_resolution = Y_RESOLUTION;
     
     std::vector< Drawable<int> > drawables;
+    
+    std::tuple<menuOptions, std::string, bool, Color> menuMap [48];
     
     void create_context_menu();
     static void menu(int value);
@@ -81,9 +74,10 @@ private:
     void spindisplay();
 };
 
-Canvas::Canvas() { }
-
-Canvas::~Canvas() { }
+Canvas::Canvas()
+{
+    menuMap[0] = std::make_tuple(recFillRed, typeid(Rectangle<int>).name(), true, red);
+}
 
 Canvas::Canvas(int x_resolution, int y_resolution)
 {
@@ -132,7 +126,16 @@ void Canvas::in_mouse(int mouse_button, int state, int x, int y)
     }
     if ((mouse_button == GLUT_LEFT_BUTTON) && (state == GLUT_DOWN))
     {
-        
+        if (c.last_mouse_button_pressed == RIGHT_MOUSE_BUTTON)
+        {
+            std::cout << "first click (x1 = " << x << ", y1 = " << y << ") after menu selection: " << menuOptionsToString(c.e) << std::endl;
+            c.currently_drawing = true;
+        }
+        else if (c.last_mouse_button_pressed == LEFT_MOUSE_BUTTON && c.currently_drawing == true)
+        {
+            std::cout << "second click (x2 = " << x << ", y2 = " << y << ") after menu selection: " << menuOptionsToString(c.e) << std::endl;
+            c.currently_drawing = false;
+        }
         c.last_mouse_button_pressed = LEFT_MOUSE_BUTTON;
         c.left_mouse_button_x = x;
         c.left_mouse_button_y = y;
@@ -141,20 +144,20 @@ void Canvas::in_mouse(int mouse_button, int state, int x, int y)
     }
     if ((mouse_button == GLUT_MIDDLE_BUTTON) && (state == GLUT_DOWN))
     {
-        /*
+        
         c.last_mouse_button_pressed = MIDDLE_MOUSE_BUTTON;
         c.middle_mouse_button_x = x;
         c.middle_mouse_button_y = y;
-         */
+        
         glutPostRedisplay ();
     }
     if ((mouse_button == GLUT_RIGHT_BUTTON) && (state == GLUT_DOWN))
     {
-        /*
+        
         c.last_mouse_button_pressed = RIGHT_MOUSE_BUTTON;
         c.right_mouse_button_x = x;
         c.right_mouse_button_y = y;
-         */
+        printf("right mouse button pressed\n");
         glutPostRedisplay ();
     }
 }
@@ -391,6 +394,7 @@ void Canvas::menu (int value)
         default:
             break;
     }
+    c.last_mouse_button_pressed = RIGHT_MOUSE_BUTTON;
     glutPostRedisplay();
 }
 
@@ -502,7 +506,7 @@ void Canvas::create_context_menu()
     glutAddSubMenu ("add line", lineSubMenu);
     glutAddSubMenu ("add bezier curve", bezierSubMenu);
     //the button that will activate the menu
-    glutAttachMenu (GLUT_LEFT_BUTTON);
+    glutAttachMenu (GLUT_RIGHT_BUTTON);
 }
 
 #endif /* Canvas_hpp */
