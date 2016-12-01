@@ -10,7 +10,7 @@
 		2F647A731DDE859F000B7BF9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F647A721DDE859F000B7BF9 /* OpenGL.framework */; };
 		2F647A751DDE85B2000B7BF9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F647A741DDE85B2000B7BF9 /* GLUT.framework */; };
 		2F647A781DDE88DB000B7BF9 /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F647A761DDE88DB000B7BF9 /* Canvas.cpp */; };
-		2F8157FE1DEA683B00D03D97 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F8157FD1DEA683B00D03D97 /* Rectangle.cpp */; };
+		2F68A9A21DEFC57200965625 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F68A9A11DEFC57200965625 /* Rectangle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +33,8 @@
 		2F647A741DDE85B2000B7BF9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		2F647A761DDE88DB000B7BF9 /* Canvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Canvas.cpp; sourceTree = "<group>"; };
 		2F647A771DDE88DB000B7BF9 /* Canvas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Canvas.hpp; sourceTree = "<group>"; };
-		2F8157FD1DEA683B00D03D97 /* Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
+		2F68A9A11DEFC57200965625 /* Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
+		2F68A9A41DEFC60F00965625 /* Rectangle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Rectangle.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +75,8 @@
 				2F647A761DDE88DB000B7BF9 /* Canvas.cpp */,
 				2F647A771DDE88DB000B7BF9 /* Canvas.hpp */,
 				2F21CFAE1DE52254006E7EC8 /* Drawable.hpp */,
-				2F8157FD1DEA683B00D03D97 /* Rectangle.cpp */,
+				2F68A9A11DEFC57200965625 /* Rectangle.cpp */,
+				2F68A9A41DEFC60F00965625 /* Rectangle.hpp */,
 			);
 			path = "cs144-painter";
 			sourceTree = "<group>";
@@ -134,8 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F8157FE1DEA683B00D03D97 /* Rectangle.cpp in Sources */,
 				2F647A781DDE88DB000B7BF9 /* Canvas.cpp in Sources */,
+				2F68A9A21DEFC57200965625 /* Rectangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +228,9 @@
 		2F647A6E1DDE84CE000B7BF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_VERSION = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -233,6 +238,9 @@
 		2F647A6F1DDE84CE000B7BF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_VERSION = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
