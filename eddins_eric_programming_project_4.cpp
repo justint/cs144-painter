@@ -18,6 +18,8 @@ TODO: implement drawing functions*/
   #include <GL/glut.h>
 #endif
 
+//using namespace std;
+
 //color options: red green blue yellow purple orange white black
 enum menuOptions {recFillRed, recFillGreen, recFillBlue, recFillYellow, recFillPurple,
       recFillOrange, recFillWhite, recFillBlack, recOutlineRed, recOutlineGreen,
@@ -29,6 +31,44 @@ enum menuOptions {recFillRed, recFillGreen, recFillBlue, recFillYellow, recFillP
       lineOrange, lineWhite, lineBlack, bezRed, bezGreen, bezBlue, bezYellow, bezPurple,
       bezOrange, bezWhite, bezBlack};
 
+bool mouseRightDown = false; //true if mouse right button is clicked
+int mousex, mousey, mousex1, mousex2, mousey1, mousey2; //storage for the captured coordinates
+int winHeight = 640;
+int winWidth = 480;
+
+//these enums will be used as indexes into an array of COLORS
+enum Color {
+    red, green, blue, yellow, purple, orange, white, black
+};
+
+//a small struct to hold the three values that will determine rgb colors
+struct rgb {
+    int r, g, b;//values from 0-255
+};
+
+//constants to be entered into the COLORS array for easy reference
+const rgb RED = {255, 0, 0};
+const rgb GREEN = {0,128,0};
+const rgb BLUE = {0,0,255};
+const rgb YELLOW = {255,255,0};
+const rgb PURPLE = {128,0,128};
+const rgb ORANGE = {255,165,0};
+const rgb WHITE = {255,255,255};
+const rgb BLACK = {0,0,0};
+
+const rgb COLORS[] = {RED, GREEN, BLUE, YELLOW, PURPLE, ORANGE, WHITE, BLACK};
+
+void colorToString()
+{
+    printf("COLORS[red]: %d,%d,%d\n",COLORS[red].r, COLORS[red].g, COLORS[red].b);
+    printf("COLORS[green]: %d,%d,%d\n",COLORS[green].r, COLORS[green].g, COLORS[green].b);
+    printf("COLORS[blue]: %d,%d,%d\n",COLORS[blue].r, COLORS[blue].g, COLORS[blue].b);
+    printf("COLORS[yellow]: %d,%d,%d\n",COLORS[yellow].r, COLORS[yellow].g, COLORS[yellow].b);
+    printf("COLORS[purple]: %d,%d,%d\n",COLORS[purple].r, COLORS[purple].g, COLORS[purple].b);
+    printf("COLORS[orange]: %d,%d,%d\n",COLORS[orange].r, COLORS[orange].g, COLORS[orange].b);
+    printf("COLORS[white]: %d,%d,%d\n",COLORS[white].r, COLORS[white].g, COLORS[white].b);
+    printf("COLORS[black]: %d,%d,%d\n",COLORS[black].r, COLORS[black].g, COLORS[black].b);
+}
 
 
 //
@@ -46,9 +86,13 @@ void InitGL (int width, int height)     // We call this right after our OpenGL w
   glMatrixMode (GL_MODELVIEW);
 }
 
+/*struct color{
+  int rValue;
+  int gValue;
+  int bValue;
+};*/
 
-
-
+//vector<color> COLORS
 
 void ReSizeGLScene (int width, int height)
 {
@@ -79,7 +123,36 @@ void DrawGLScene ()
   glutSwapBuffers ();
 }
 
+void mouse(int button, int state, int x, int y)
+{
+  if (button == GLUT_RIGHT_BUTTON)
+  {
+    mouseRightDown = (state == GLUT_DOWN) ? true : false;
 
+    //save the mouse position
+    mousex = x;
+    mousey = y;
+    printf("made a mouseclick. mousex: %d, mousey: %d\n",mousex, mousey);
+  }
+
+
+}
+
+
+void clickCollector()
+{
+  //have to figure out a way to register mouseclicks during loop
+  while(mouseRightDown)
+  {
+    printf("inside clickCollector while loop\n");
+    mousex1 = mousex;
+    mousey1 = mousey;
+    mouseRightDown = true;
+  }
+  printf("after while loop\n");
+  printf("mousex1: %d, mousey1: %d\n",mousex1,mousey1);
+  mouseRightDown = false;
+}
 
 
 /*
@@ -95,6 +168,8 @@ void menu (int value)
   {
     case recFillRed:
       printf ("add rectangle -> filled -> red\n");
+      clickCollector();
+      printf("mousex1: %d, mousey1: %d, mousex2: %d, mousey2: %d\n",mousex1, mousey2, mousex2,mousey2);
       //do something
     break;
     case recFillGreen:
@@ -409,14 +484,15 @@ int main (int argc, char *argv[])
 
   glutInit (&argc, argv);
   glutInitDisplayMode (GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH);
-  glutInitWindowSize (640, 480);
+  glutInitWindowSize (winHeight, winWidth);
   glutInitWindowPosition (0, 0);
   window = glutCreateWindow ("Eddins Drawing Program");
   //create context menus
   contextMenu();
-
+  colorToString();
+  glutMouseFunc(mouse);
   glutDisplayFunc (&DrawGLScene);
   glutReshapeFunc (&ReSizeGLScene);
-  InitGL (640, 480);
+  InitGL (winHeight, winWidth);
   glutMainLoop ();
 }
