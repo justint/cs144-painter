@@ -107,9 +107,6 @@ struct Context {
     GLsizei right_mouse_button_x, right_mouse_button_y;
     int last_mouse_button_pressed;
     
-    int x_res;
-    int y_res;
-    
     Drawable<int> *drawable;
     bool currently_drawing;
     

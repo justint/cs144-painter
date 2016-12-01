@@ -243,7 +243,7 @@ void Canvas::create_context_menu()
  */
 void Canvas::menu (int value)
 {
-    if (!cntxt.currently_drawing)
+    if (cntxt.currently_drawing)
         delete cntxt.drawable;
     switch (value)
     {
