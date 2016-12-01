@@ -18,8 +18,8 @@
 template<typename T>
 class Rectangle : public Drawable<T> {
 public:
-    Rectangle(T x1, T y1, T x2, T y2);
-    void draw(const Context& c);
+    Rectangle(bool filled, rgb color);
+    void draw();
     
 private:
     T x1, x2, y1, y2;

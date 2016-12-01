@@ -10,7 +10,6 @@
 		2F647A731DDE859F000B7BF9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F647A721DDE859F000B7BF9 /* OpenGL.framework */; };
 		2F647A751DDE85B2000B7BF9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F647A741DDE85B2000B7BF9 /* GLUT.framework */; };
 		2F647A781DDE88DB000B7BF9 /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F647A761DDE88DB000B7BF9 /* Canvas.cpp */; };
-		2F68A9A21DEFC57200965625 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F68A9A11DEFC57200965625 /* Rectangle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +34,12 @@
 		2F647A771DDE88DB000B7BF9 /* Canvas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Canvas.hpp; sourceTree = "<group>"; };
 		2F68A9A11DEFC57200965625 /* Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
 		2F68A9A41DEFC60F00965625 /* Rectangle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Rectangle.hpp; sourceTree = "<group>"; };
+		2F68A9A61DF00BFC00965625 /* Ellipse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ellipse.cpp; sourceTree = "<group>"; };
+		2F68A9A71DF00BFC00965625 /* Ellipse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ellipse.hpp; sourceTree = "<group>"; };
+		2F68A9A91DF00C0400965625 /* Bezier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bezier.cpp; sourceTree = "<group>"; };
+		2F68A9AA1DF00C0400965625 /* Bezier.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bezier.hpp; sourceTree = "<group>"; };
+		2F68A9AC1DF00C0B00965625 /* Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
+		2F68A9AD1DF00C0B00965625 /* Line.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Line.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,12 @@
 				2F21CFAE1DE52254006E7EC8 /* Drawable.hpp */,
 				2F68A9A11DEFC57200965625 /* Rectangle.cpp */,
 				2F68A9A41DEFC60F00965625 /* Rectangle.hpp */,
+				2F68A9A61DF00BFC00965625 /* Ellipse.cpp */,
+				2F68A9A71DF00BFC00965625 /* Ellipse.hpp */,
+				2F68A9A91DF00C0400965625 /* Bezier.cpp */,
+				2F68A9AA1DF00C0400965625 /* Bezier.hpp */,
+				2F68A9AC1DF00C0B00965625 /* Line.cpp */,
+				2F68A9AD1DF00C0B00965625 /* Line.hpp */,
 			);
 			path = "cs144-painter";
 			sourceTree = "<group>";
@@ -137,7 +148,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F647A781DDE88DB000B7BF9 /* Canvas.cpp in Sources */,
-				2F68A9A21DEFC57200965625 /* Rectangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
