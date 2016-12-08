@@ -315,99 +315,99 @@ void Canvas::menu (int value)
             break;
         case ellFillRed:
             printf ("add ellipse -> fill -> red\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(true, Colors::RED);
             break;
         case ellFillGreen:
             printf ("add ellipse -> fill -> green\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(true, Colors::GREEN);
             break;
         case ellFillBlue:
             printf ("add ellipse -> fill -> blue\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(true, Colors::BLUE);
             break;
         case ellFillYellow:
             printf ("add ellipse -> fill -> yellow\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(true, Colors::YELLOW);
             break;
         case ellFillPurple:
             printf ("add ellipse -> fill -> purple\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(true, Colors::PURPLE);
             break;
         case ellFillOrange:
             printf ("add ellipse -> fill -> orange\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(true, Colors::PURPLE);
             break;
         case ellFillWhite:
             printf ("add ellipse -> fill -> white\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(true, Colors::WHITE);
             break;
         case ellFillBlack:
             printf ("add ellipse -> fill -> black\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(true, Colors::BLACK);
             break;
         case ellOutRed:
             printf ("add ellipse -> outline -> red\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(false, Colors::RED);
             break;
         case ellOutGreen:
             printf ("add ellipse -> outline -> green\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(false, Colors::GREEN);
             break;
         case ellOutBlue:
             printf ("add ellipse -> outline -> blue\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(false, Colors::BLUE);
             break;
         case ellOutYellow:
             printf ("add ellipse -> outline -> yellow\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(false, Colors::YELLOW);
             break;
         case ellOutPurple:
             printf ("add ellipse -> outline -> purple\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(false, Colors::PURPLE);
             break;
         case ellOutOrange:
             printf ("add ellipse -> outline -> orange\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(false, Colors::ORANGE);
             break;
         case ellOutWhite:
             printf ("add ellipse -> outline -> white\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(false, Colors::WHITE);
             break;
         case ellOutBlack:
             printf ("add ellipse -> outline -> black\n");
-            //do something
+            cntxt.drawable = new Ellipse<int>(false, Colors::BLACK);
             break;
         case lineRed:
             printf ("add line -> red\n");
-            //do something
+            cntxt.drawable = new Line<int>(Colors::RED);
             break;
         case lineGreen:
             printf ("add line -> green\n");
-            //do something
+            cntxt.drawable = new Line<int>(Colors::GREEN);
             break;
         case lineBlue:
             printf ("add line -> blue\n");
-            //do something
+            cntxt.drawable = new Line<int>(Colors::BLUE);
             break;
         case lineYellow:
             printf ("add line -> yellow\n");
-            //do something
+            cntxt.drawable = new Line<int>(Colors::YELLOW);
             break;
         case linePurple:
             printf ("add line -> purple\n");
-            //do something
+            cntxt.drawable = new Line<int>(Colors::PURPLE);
             break;
         case lineOrange:
             printf ("add line -> orange\n");
-            //do something
+            cntxt.drawable = new Line<int>(Colors::ORANGE);
             break;
         case lineWhite:
             printf ("add line -> white\n");
-            //do something
+            cntxt.drawable = new Line<int>(Colors::WHITE);
             break;
         case lineBlack:
             printf ("add line -> black\n");
-            //do something
+            cntxt.drawable = new Line<int>(Colors::BLACK);
             break;
         case bezRed:
             printf ("add bezier -> red\n");

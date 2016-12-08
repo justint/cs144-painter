@@ -15,6 +15,13 @@
 
 template<typename T>
 class Ellipse : public Drawable<T>{
+public:
+    Ellipse(bool filled, rgb color);
+    void draw();
+    
+private:
+    T x1, x2, y1, y2;
+
     
 };
 
