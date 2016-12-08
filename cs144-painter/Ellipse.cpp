@@ -2,14 +2,11 @@
 //  Ellipse.cpp
 //  cs144-painter
 //
-//  Created by Justin Tennant on 11/30/16.
-//
-//
 
 #include "Ellipse.hpp"
 #include <math.h>
 
-#define THICKNESS 5
+//convert from degrees to radians
 #define DEG2RAD 3.14159/180.0
 
 
@@ -25,11 +22,11 @@ void Ellipse<T>::draw()
     std::vector<GLint> GLverts;
     for (T v : Drawable<T>::verts)
         GLverts.push_back((GLint)v);
-        printf("verts[0]: %u, verts[1]: %u, verts[2]: %u, verts[3]: %u\n", GLverts[0], GLverts[1], GLverts[2], GLverts[3]);
     
+    //find the radius of the x1-x2 coords
     float radiusX = abs(GLverts[0] - GLverts[2])/2;
+    //find the radius of the y1-y2 coords
     float radiusY = abs(GLverts[1]- GLverts[3])/2;
-    printf("radiusX: %i, radiusY: %i \n", radiusX, radiusY);
     int topX, topY;
     //find which x value is the top corner
     if(GLverts[0] < GLverts[2])
@@ -53,6 +50,7 @@ void Ellipse<T>::draw()
     //draw a filled ellipse
     if (Drawable<T>::filled)
     {
+        //TRIANGLE_FAN fills the ellipse
         glBegin(GL_TRIANGLE_FAN);
         
         for(int i=0;i<360;i++)
@@ -67,6 +65,7 @@ void Ellipse<T>::draw()
     //draw an unfilled ellipse
     else
     {
+        //LINE_LOOP makes the ellipse outline
         glBegin(GL_LINE_LOOP);
         
         for(int i=0;i<360;i++)
