@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F647A731DDE859F000B7BF9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F647A721DDE859F000B7BF9 /* OpenGL.framework */; };
+		2F647A751DDE85B2000B7BF9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F647A741DDE85B2000B7BF9 /* GLUT.framework */; };
+		2F647A781DDE88DB000B7BF9 /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F647A761DDE88DB000B7BF9 /* Canvas.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F647A641DDE84CE000B7BF9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2F21CFAE1DE52254006E7EC8 /* Drawable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Drawable.hpp; sourceTree = "<group>"; };
+		2F647A661DDE84CE000B7BF9 /* cs144-painter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cs144-painter"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F647A701DDE857E000B7BF9 /* mouse_keyboard_click_position.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mouse_keyboard_click_position.c; sourceTree = "<group>"; };
+		2F647A721DDE859F000B7BF9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		2F647A741DDE85B2000B7BF9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		2F647A761DDE88DB000B7BF9 /* Canvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Canvas.cpp; sourceTree = "<group>"; };
+		2F647A771DDE88DB000B7BF9 /* Canvas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Canvas.hpp; sourceTree = "<group>"; };
+		2F68A9A11DEFC57200965625 /* Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
+		2F68A9A41DEFC60F00965625 /* Rectangle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Rectangle.hpp; sourceTree = "<group>"; };
+		2F68A9A61DF00BFC00965625 /* Ellipse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ellipse.cpp; sourceTree = "<group>"; };
+		2F68A9A71DF00BFC00965625 /* Ellipse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ellipse.hpp; sourceTree = "<group>"; };
+		2F68A9A91DF00C0400965625 /* Bezier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bezier.cpp; sourceTree = "<group>"; };
+		2F68A9AA1DF00C0400965625 /* Bezier.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bezier.hpp; sourceTree = "<group>"; };
+		2F68A9AC1DF00C0B00965625 /* Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
+		2F68A9AD1DF00C0B00965625 /* Line.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Line.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F647A631DDE84CE000B7BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F647A751DDE85B2000B7BF9 /* GLUT.framework in Frameworks */,
+				2F647A731DDE859F000B7BF9 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F647A5D1DDE84CE000B7BF9 = {
+			isa = PBXGroup;
+			children = (
+				2F647A741DDE85B2000B7BF9 /* GLUT.framework */,
+				2F647A721DDE859F000B7BF9 /* OpenGL.framework */,
+				2F647A701DDE857E000B7BF9 /* mouse_keyboard_click_position.c */,
+				2F647A681DDE84CE000B7BF9 /* cs144-painter */,
+				2F647A671DDE84CE000B7BF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F647A671DDE84CE000B7BF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F647A661DDE84CE000B7BF9 /* cs144-painter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F647A681DDE84CE000B7BF9 /* cs144-painter */ = {
+			isa = PBXGroup;
+			children = (
+				2F647A761DDE88DB000B7BF9 /* Canvas.cpp */,
+				2F647A771DDE88DB000B7BF9 /* Canvas.hpp */,
+				2F21CFAE1DE52254006E7EC8 /* Drawable.hpp */,
+				2F68A9A11DEFC57200965625 /* Rectangle.cpp */,
+				2F68A9A41DEFC60F00965625 /* Rectangle.hpp */,
+				2F68A9A61DF00BFC00965625 /* Ellipse.cpp */,
+				2F68A9A71DF00BFC00965625 /* Ellipse.hpp */,
+				2F68A9A91DF00C0400965625 /* Bezier.cpp */,
+				2F68A9AA1DF00C0400965625 /* Bezier.hpp */,
+				2F68A9AC1DF00C0B00965625 /* Line.cpp */,
+				2F68A9AD1DF00C0B00965625 /* Line.hpp */,
+			);
+			path = "cs144-painter";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F647A651DDE84CE000B7BF9 /* cs144-painter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F647A6D1DDE84CE000B7BF9 /* Build configuration list for PBXNativeTarget "cs144-painter" */;
+			buildPhases = (
+				2F647A621DDE84CE000B7BF9 /* Sources */,
+				2F647A631DDE84CE000B7BF9 /* Frameworks */,
+				2F647A641DDE84CE000B7BF9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cs144-painter";
+			productName = "cs144-painter";
+			productReference = 2F647A661DDE84CE000B7BF9 /* cs144-painter */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F647A5E1DDE84CE000B7BF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				TargetAttributes = {
+					2F647A651DDE84CE000B7BF9 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 2F647A611DDE84CE000B7BF9 /* Build configuration list for PBXProject "cs144-painter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2F647A5D1DDE84CE000B7BF9;
+			productRefGroup = 2F647A671DDE84CE000B7BF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F647A651DDE84CE000B7BF9 /* cs144-painter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F647A621DDE84CE000B7BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F647A781DDE88DB000B7BF9 /* Canvas.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2F647A6B1DDE84CE000B7BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2F647A6C1DDE84CE000B7BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2F647A6E1DDE84CE000B7BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_VERSION = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2F647A6F1DDE84CE000B7BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_VERSION = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F647A611DDE84CE000B7BF9 /* Build configuration list for PBXProject "cs144-painter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F647A6B1DDE84CE000B7BF9 /* Debug */,
+				2F647A6C1DDE84CE000B7BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F647A6D1DDE84CE000B7BF9 /* Build configuration list for PBXNativeTarget "cs144-painter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F647A6E1DDE84CE000B7BF9 /* Debug */,
+				2F647A6F1DDE84CE000B7BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F647A5E1DDE84CE000B7BF9 /* Project object */;
+}
