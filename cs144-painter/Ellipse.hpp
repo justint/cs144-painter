@@ -16,10 +16,6 @@ public:
     Ellipse(bool filled, rgb color);
     void draw();
     
-private:
-    T x1, x2, y1, y2;
-
-    
 };
 
 #endif /* Ellipse_hpp */

@@ -16,6 +16,10 @@
 template<typename T>
 class Bezier : public Drawable<T>{
     
+public:
+    Bezier(bool filled, rgb color);
+    void draw();
+    
 };
 
 #endif /* Bezier_hpp */

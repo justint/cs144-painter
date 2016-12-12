@@ -109,6 +109,8 @@ struct Context {
     
     Drawable<int> *drawable;
     bool currently_drawing;
+    int counter;
+    bool bez;
     
     std::vector<int> verts;
     
