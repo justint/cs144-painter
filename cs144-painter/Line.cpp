@@ -2,12 +2,14 @@
 //  Line.cpp
 //  cs144-painter
 //
+//  Created by Justin Tennant on 11/30/16.
+//
+//
 
 #include "Line.hpp"
 
-
 template<typename T>
-Line<T>::Line(bool filled, rgb color) : Drawable<T>(filled, color) { }
+Line<T>::Line(rgb color) : Drawable<T>(true, color) { }
 
 template<typename T>
 void Line<T>::draw()

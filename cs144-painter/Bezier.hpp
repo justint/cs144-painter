@@ -17,7 +17,7 @@ template<typename T>
 class Bezier : public Drawable<T>{
     
 public:
-    Bezier(bool filled, rgb color);
+    Bezier(rgb color);
     void draw();
     
 };

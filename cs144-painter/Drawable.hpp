@@ -51,19 +51,6 @@ const rgb WHITE = {255,255,255};
 const rgb BLACK = {0,0,0};
 }
 
-/*
-void colorToString()
-{
-    printf("COLORS[red]: %d,%d,%d\n",Colors::RED.r, Colors::RED.g, Colors::RED.b);
-    printf("COLORS[green]: %d,%d,%d\n",COLORS[green].r, COLORS[green].g, COLORS[green].b);
-    printf("COLORS[blue]: %d,%d,%d\n",COLORS[blue].r, COLORS[blue].g, COLORS[blue].b);
-    printf("COLORS[yellow]: %d,%d,%d\n",COLORS[yellow].r, COLORS[yellow].g, COLORS[yellow].b);
-    printf("COLORS[purple]: %d,%d,%d\n",COLORS[purple].r, COLORS[purple].g, COLORS[purple].b);
-    printf("COLORS[orange]: %d,%d,%d\n",COLORS[orange].r, COLORS[orange].g, COLORS[orange].b);
-    printf("COLORS[white]: %d,%d,%d\n",COLORS[white].r, COLORS[white].g, COLORS[white].b);
-    printf("COLORS[black]: %d,%d,%d\n",COLORS[black].r, COLORS[black].g, COLORS[black].b);
-}
-*/
 
 struct Context;
 
@@ -109,8 +96,9 @@ struct Context {
     
     Drawable<int> *drawable;
     bool currently_drawing;
-    int counter;
-    bool bez;
+    
+    bool bezier;
+    int bezier_click_count;
     
     std::vector<int> verts;
     

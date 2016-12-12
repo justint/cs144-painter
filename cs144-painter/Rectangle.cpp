@@ -22,8 +22,6 @@ void Rectangle<T>::draw()
     for (T v : Drawable<T>::verts)
         GLverts.push_back((GLint)v);
     
-    //printf("verts[0]: %u, verts[1]: %u, verts[2]: %u, verts[3]: %u\n", GLverts[0], GLverts[1], GLverts[2], GLverts[3]);
-    
     glColor3ub (Drawable<T>::color.r, Drawable<T>::color.g, Drawable<T>::color.b);
     if (Drawable<T>::filled)
         glRecti(GLverts[0], GLverts[1], GLverts[2], GLverts[3]);

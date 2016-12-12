@@ -2,6 +2,9 @@
 //  Ellipse.hpp
 //  cs144-painter
 //
+//  Created by Justin Tennant on 11/30/16.
+//
+//
 
 #ifndef Ellipse_hpp
 #define Ellipse_hpp
@@ -15,7 +18,6 @@ class Ellipse : public Drawable<T>{
 public:
     Ellipse(bool filled, rgb color);
     void draw();
-    
 };
 
 #endif /* Ellipse_hpp */
