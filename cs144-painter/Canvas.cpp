@@ -73,7 +73,30 @@ void Canvas::in_mouse(int mouse_button, int state, int x, int y)
             cntxt.verts.push_back(x);
             cntxt.verts.push_back(y);
             
+            if (cntxt.bezier) cntxt.bezier_click_count = 1;
+            
             cntxt.currently_drawing = true;
+        }
+        else if (cntxt.bezier)
+        {
+            cntxt.bezier_click_count++;
+            
+            std::cout << "click number " << cntxt.bezier_click_count << ": (x2 = " << x << ", y2 = " << y << ") for bezier "<< std::endl;
+            
+            cntxt.verts.push_back(x);
+            cntxt.verts.push_back(y);
+            
+            if (cntxt.bezier_click_count >= 4) {
+                (*cntxt.drawable).verts = cntxt.verts;
+                drawables.push_back(cntxt.drawable);
+                
+                cntxt.verts.clear();
+                
+                
+                cntxt.bezier = false;
+                cntxt.bezier_click_count = 0;
+                cntxt.currently_drawing = false;
+            }
         }
         else if (cntxt.last_mouse_button_pressed == LEFT_MOUSE_BUTTON && cntxt.currently_drawing == true)
         {
@@ -243,16 +266,20 @@ void Canvas::create_context_menu()
  */
 void Canvas::menu (int value)
 {
-    if (cntxt.currently_drawing)
+    if (cntxt.currently_drawing) {
         delete cntxt.drawable;
+        
+        cntxt.verts.clear();
+        cntxt.currently_drawing = false;
+        cntxt.bezier = false;
+        cntxt.bezier_click_count = 0;
+    }
     switch (value)
     {
         case recFillRed:
-        {
             printf ("add rectangle -> filled -> red\n");
             cntxt.drawable = new Rectangle<int>(true, Colors::RED);
             break;
-        }
         case recFillGreen:
             printf ("add rectangle -> filled -> green\n");
             cntxt.drawable = new Rectangle<int>(true, Colors::GREEN);
@@ -411,35 +438,43 @@ void Canvas::menu (int value)
             break;
         case bezRed:
             printf ("add bezier -> red\n");
-            //do something
+            cntxt.drawable = new Bezier<int>(Colors::RED);
+            cntxt.bezier = true;
             break;
         case bezGreen:
             printf ("add bezier -> green\n");
-            //do something
+            cntxt.drawable = new Bezier<int>(Colors::GREEN);
+            cntxt.bezier = true;
             break;
         case bezBlue:
             printf ("add bezier -> blue\n");
-            //do something
+            cntxt.drawable = new Bezier<int>(Colors::BLUE);
+            cntxt.bezier = true;
             break;
         case bezYellow:
             printf ("add bezier -> yellow\n");
-            //do something
+            cntxt.drawable = new Bezier<int>(Colors::YELLOW);
+            cntxt.bezier = true;
             break;
         case bezPurple:
             printf ("add bezier -> purple\n");
-            //do something
+            cntxt.drawable = new Bezier<int>(Colors::PURPLE);
+            cntxt.bezier = true;
             break;
         case bezOrange:
             printf ("add bezier -> orange\n");
-            //do something
+            cntxt.drawable = new Bezier<int>(Colors::ORANGE);
+            cntxt.bezier = true;
             break;
         case bezWhite:
             printf ("add bezier -> white\n");
-            //do something
+            cntxt.drawable = new Bezier<int>(Colors::WHITE);
+            cntxt.bezier = true;
             break;
         case bezBlack:
             printf ("add bezier -> black\n");
-            //do something
+            cntxt.drawable = new Bezier<int>(Colors::BLACK);
+            cntxt.bezier = true;
             break;
         default:
             break;

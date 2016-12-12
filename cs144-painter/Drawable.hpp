@@ -110,6 +110,9 @@ struct Context {
     Drawable<int> *drawable;
     bool currently_drawing;
     
+    bool bezier;
+    int bezier_click_count;
+    
     std::vector<int> verts;
     
     Context() : left_mouse_button_x(120), left_mouse_button_y(240), middle_mouse_button_x(220), middle_mouse_button_y(240), right_mouse_button_x(320), right_mouse_button_y(240), last_mouse_button_pressed(0), currently_drawing(false)

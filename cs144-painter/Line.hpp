@@ -18,10 +18,6 @@ class Line : public Drawable<T>{
 public:
     Line(rgb color);
     void draw();
-    
-private:
-    T x1, x2, y1, y2;
-
 };
 
 #endif /* Line_hpp */
