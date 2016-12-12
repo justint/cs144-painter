@@ -362,7 +362,7 @@ void Canvas::menu (int value)
             break;
         case ellFillOrange:
             printf ("add ellipse -> fill -> orange\n");
-            cntxt.drawable = new Ellipse<int>(true, Colors::PURPLE);
+            cntxt.drawable = new Ellipse<int>(true, Colors::ORANGE);
             break;
         case ellFillWhite:
             printf ("add ellipse -> fill -> white\n");
