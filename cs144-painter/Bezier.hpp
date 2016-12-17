@@ -2,9 +2,7 @@
 //  Bezier.hpp
 //  cs144-painter
 //
-//  Created by Justin Tennant on 11/30/16.
-//
-//
+
 
 #ifndef Bezier_hpp
 #define Bezier_hpp

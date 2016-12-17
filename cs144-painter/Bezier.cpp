@@ -11,12 +11,9 @@ Bezier<T>::Bezier(rgb color) : Drawable<T>(true, color) { }
 template<typename T>
 void Bezier<T>::draw()
 {
-    
     std::vector<GLint> GLverts;
     for (T v : Drawable<T>::verts)
         GLverts.push_back((GLint)v);
-    
-    
     
     //find the radius of the x1-x2 coords
     float radiusX = abs(GLverts[0] - GLverts[2])/2;
@@ -57,13 +54,5 @@ void Bezier<T>::draw()
         glEvalCoord1f(GLfloat (k) / 50.0);
     }
     glEnd();
-    
-    
-    /*glBegin(GL_POINTS);
-     for(k=0; k < 4; k++)
-     {
-     glVertex3fv(&ctrlPts [k][0]);
-     }
-     glEnd();*/
     
 }

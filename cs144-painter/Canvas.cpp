@@ -2,9 +2,7 @@
 //  Canvas.cpp
 //  cs144-painter
 //
-//  Created by Justin Tennant on 11/17/16.
-//
-//
+
 
 #include "Canvas.hpp"
 
@@ -135,16 +133,6 @@ void Canvas::in_mouse(int mouse_button, int state, int x, int y)
         printf("right mouse button pressed\n");
         glutPostRedisplay ();
     }
-}
-
-void Canvas::in_keyboard(unsigned char key, int x, int y)
-{
-    // To be written
-}
-
-void Canvas::arrow_keys(const int key, int x, int y)
-{
-    // To be written
 }
 
 /*
@@ -494,8 +482,6 @@ void Canvas::init(int argc, char **argv)
     glutDisplayFunc (display);
     glutReshapeFunc (reshape);
     glutMouseFunc (in_mouse);
-    glutKeyboardFunc (in_keyboard);
-    glutSpecialFunc (arrow_keys);
     glutMainLoop ();
 }
 

@@ -2,9 +2,7 @@
 //  Ellipse.cpp
 //  cs144-painter
 //
-//  Created by Justin Tennant on 11/30/16.
-//
-//
+
 
 #include "Ellipse.hpp"
 
@@ -21,9 +19,6 @@ Ellipse<T>::Ellipse(bool filled, rgb color) : Drawable<T>(filled, color) { }
 template<typename T>
 void Ellipse<T>::draw()
 {
-
-    //printf("Drawing Ellipse...");
-    
     std::vector<GLint> GLverts;
     for (T v : Drawable<T>::verts)
         GLverts.push_back((GLint)v);

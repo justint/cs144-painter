@@ -2,9 +2,7 @@
 //  Canvas.hpp
 //  cs144-painter
 //
-//  Created by Justin Tennant on 11/17/16.
-//
-//
+
 
 // Hides pesky deprecated warnings in Xcode
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
@@ -71,8 +69,6 @@ private:
     static void display();
     static void reshape(int w, int h);
     static void in_mouse(int mouse_button, int state, int x, int y);
-    static void in_keyboard(unsigned char key, int x, int y);
-    static void arrow_keys(int key, int x, int y);
     void spindisplay();
 };
 #endif /* Canvas_hpp */
