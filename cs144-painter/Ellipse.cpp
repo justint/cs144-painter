@@ -2,14 +2,13 @@
 //  Ellipse.cpp
 //  cs144-painter
 //
-//  Created by Justin Tennant on 11/30/16.
-//
-//
+
 
 #include "Ellipse.hpp"
 
 #include "Ellipse.hpp"
 #include <math.h>
+#include <cstdlib>
 
 //convert from degrees to radians
 #define DEG2RAD 3.14159/180.0
@@ -21,13 +20,10 @@ Ellipse<T>::Ellipse(bool filled, rgb color) : Drawable<T>(filled, color) { }
 template<typename T>
 void Ellipse<T>::draw()
 {
-
-    //printf("Drawing Ellipse...");
-    
     std::vector<GLint> GLverts;
     for (T v : Drawable<T>::verts)
         GLverts.push_back((GLint)v);
-    
+
     //find the radius of the x1-x2 coords
     float radiusX = abs(GLverts[0] - GLverts[2])/2;
     //find the radius of the y1-y2 coords
@@ -49,22 +45,22 @@ void Ellipse<T>::draw()
     else{
         topY = GLverts[3];
     }
-    
-    
+
+
     glColor3ub (Drawable<T>::color.r, Drawable<T>::color.g, Drawable<T>::color.b);
     //draw a filled ellipse
     if (Drawable<T>::filled)
     {
         //TRIANGLE_FAN fills the ellipse
         glBegin(GL_TRIANGLE_FAN);
-        
+
         for(int i=0;i<360;i++)
         {
             float rad = i*DEG2RAD;
             glVertex2f((cos(rad)*radiusX + (topX + radiusX)),
                        (sin(rad)*radiusY) + (topY + radiusY));
         }
-        
+
         glEnd();
     }
     //draw an unfilled ellipse
@@ -72,14 +68,14 @@ void Ellipse<T>::draw()
     {
         //LINE_LOOP makes the ellipse outline
         glBegin(GL_LINE_LOOP);
-        
+
         for(int i=0;i<360;i++)
         {
             float rad = i*DEG2RAD;
             glVertex2f((cos(rad)*radiusX + (topX + radiusX)),
                        (sin(rad)*radiusY) + (topY + radiusY));
         }
-        
+
         glEnd();
     }
 }

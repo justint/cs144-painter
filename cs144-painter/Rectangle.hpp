@@ -2,9 +2,7 @@
 //  Rectangle.hpp
 //  cs144-painter
 //
-//  Created by Justin Tennant on 11/30/16.
-//
-//
+
 
 #ifndef Rectangle_hpp
 #define Rectangle_hpp

@@ -2,9 +2,7 @@
 //  Line.cpp
 //  cs144-painter
 //
-//  Created by Justin Tennant on 11/30/16.
-//
-//
+
 
 #include "Line.hpp"
 
@@ -13,9 +11,7 @@ Line<T>::Line(rgb color) : Drawable<T>(true, color) { }
 
 template<typename T>
 void Line<T>::draw()
-{
-    //printf("Drawing line...");
-    
+{    
     std::vector<GLint> GLverts;
     for (T v : Drawable<T>::verts)
         GLverts.push_back((GLint)v);

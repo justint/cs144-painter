@@ -2,9 +2,7 @@
 //  Drawable.hpp
 //  cs144-painter
 //
-//  Created by Justin Tennant on 11/22/16.
-//
-//
+
 
 #ifndef Drawable_hpp
 #define Drawable_hpp
@@ -51,7 +49,6 @@ const rgb WHITE = {255,255,255};
 const rgb BLACK = {0,0,0};
 }
 
-
 struct Context;
 
 /*
@@ -64,15 +61,15 @@ public:
     enum type {
         rectangle, ellipse, bezier_curve, line
     };
-    
+
     Drawable(bool filled, rgb color);
     ~Drawable();
     void virtual draw();
-    
+
     std::vector<T> verts;
-    
-    static bool check_vert_type(std::vector<T> verts);
-    
+
+    bool check_vert_type(std::vector<T> verts);
+
     Drawable<T> operator=(Drawable<T> d);
 protected:
     const bool filled;
@@ -83,25 +80,25 @@ protected:
  Provides important resolution, mouse info to each drawable so
  they can properly draw their elements at the correct locations
  in the canvas.
- 
+
  Should be constructed before each window resize/draw and passed into
  every draw() call.
- 
+
  */
 struct Context {
     GLsizei left_mouse_button_x, left_mouse_button_y;
     GLsizei middle_mouse_button_x, middle_mouse_button_y;
     GLsizei right_mouse_button_x, right_mouse_button_y;
     int last_mouse_button_pressed;
-    
+
     Drawable<int> *drawable;
     bool currently_drawing;
-    
+
     bool bezier;
     int bezier_click_count;
-    
+
     std::vector<int> verts;
-    
+
     Context() : left_mouse_button_x(120), left_mouse_button_y(240), middle_mouse_button_x(220), middle_mouse_button_y(240), right_mouse_button_x(320), right_mouse_button_y(240), last_mouse_button_pressed(0), currently_drawing(false)
     { }
 };
@@ -118,7 +115,7 @@ bool Drawable<T>::check_vert_type(std::vector<T> verts)
     for (T v : verts)
     {
         if (typeid(v) != typeid(int) || typeid(v) != typeid(float)
-            || typeid(v) != typeid(double) || typeid(v) != typeid(short)) 
+            || typeid(v) != typeid(double) || typeid(v) != typeid(short))
             throw typeid(v).name();
     }
     return true;

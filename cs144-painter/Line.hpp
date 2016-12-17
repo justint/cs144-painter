@@ -2,9 +2,7 @@
 //  Line.hpp
 //  cs144-painter
 //
-//  Created by Justin Tennant on 11/30/16.
-//
-//
+
 
 #ifndef Line_hpp
 #define Line_hpp
