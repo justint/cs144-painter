@@ -12,9 +12,15 @@
 #include <exception>
 #include <tuple>
 
-#include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
-#include <GLUT/glut.h>
+#ifdef __APPLE__
+#  include <OpenGL/gl.h>
+#  include <OpenGL/glu.h>
+#  include <GLUT/glut.h>
+#else
+#  include <GL/gl.h>
+#  include <GL/glu.h>
+#  include <GL/glut.h>
+#endif
 
 //color options: red green blue yellow purple orange white black
 enum menuOptions {recFillRed, recFillGreen, recFillBlue, recFillYellow, recFillPurple,
@@ -58,7 +64,7 @@ struct Context;
 template<typename T>
 class Drawable {
 public:
-    static enum type {
+    enum type {
         rectangle, ellipse, bezier_curve, line
     };
     

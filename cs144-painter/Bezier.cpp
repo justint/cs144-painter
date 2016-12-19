@@ -15,28 +15,6 @@ void Bezier<T>::draw()
     for (T v : Drawable<T>::verts)
         GLverts.push_back((GLint)v);
     
-    //find the radius of the x1-x2 coords
-    float radiusX = abs(GLverts[0] - GLverts[2])/2;
-    //find the radius of the y1-y2 coords
-    float radiusY = abs(GLverts[1]- GLverts[3])/2;
-    int topX, topY;
-    //find which x value is the top corner
-    if(GLverts[0] < GLverts[6])
-    {
-        topX = GLverts[0];
-    }
-    else{
-        topX = GLverts[6];
-    }
-    //Find which y value is the top corner
-    if(GLverts[1] < GLverts[7])
-    {
-        topY = GLverts[1];
-    }
-    else{
-        topY = GLverts[7];
-    }
-    
     
     GLfloat ctrlPts [4][3] = {{static_cast<GLfloat>(GLverts[0]), static_cast<GLfloat>(GLverts[1]), 0.0}, {static_cast<GLfloat>(GLverts[2]), static_cast<GLfloat>(GLverts[3]), 0.0}, {static_cast<GLfloat>(GLverts[4]), static_cast<GLfloat>(GLverts[5]), 0.0}, {static_cast<GLfloat>(GLverts[6]), static_cast<GLfloat>(GLverts[7]), 0.0}};
     
